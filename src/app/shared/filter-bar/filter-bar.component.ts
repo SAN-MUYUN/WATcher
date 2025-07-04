@@ -79,17 +79,6 @@ export class FilterBarComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Checks if program is filtering by type issue.
-   */
-  isFilterIssue() {
-    return this.filter.type === this.typeOptions.Issue || this.filter.type === this.typeOptions.All;
-  }
-
-  isFilterPullRequest() {
-    return this.filter.type === this.typeOptions.PullRequests || this.filter.type === this.typeOptions.All;
-  }
-
-  /**
    * Fetch and initialize all information from repository to populate Issue Dashboard.
    * Re-called when repo has changed
    */

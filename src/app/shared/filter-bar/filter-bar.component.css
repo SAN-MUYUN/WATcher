@@ -55,6 +55,14 @@ ul {
   } */
 }
 
+.status-section-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 14px;
+  display: flex;
+  justify-content: center;
+}
+
 /*
 To fix issue: https://github.com/CATcher-org/WATcher/issues/462
 .cdk-overlay-pane is a parent class to the select panel 

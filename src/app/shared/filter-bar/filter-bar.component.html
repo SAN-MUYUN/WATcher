@@ -22,32 +22,24 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="standard" class="filter-item">
-      <mat-label>Status</mat-label>
+      <mat-label>Type and Status</mat-label>
       <mat-select
         [value]="this.filter.status"
         panelClass="filter-bar-panel"
         (selectionChange)="this.filtersService.updateFilters({ status: $event.value })"
         multiple
       >
-        <mat-option *ngIf="isFilterPullRequest()" [value]="statusOptions.OpenPullRequests">Open Pull Requests</mat-option>
-        <mat-option *ngIf="isFilterPullRequest()" [value]="statusOptions.MergedPullRequests">Merged Pull Requests</mat-option>
-        <mat-option *ngIf="isFilterPullRequest()" [value]="statusOptions.ClosedPullRequests">Closed Pull Request</mat-option>
-        <mat-option *ngIf="isFilterIssue()" [value]="statusOptions.OpenIssues">Open Issues</mat-option>
-        <mat-option *ngIf="isFilterIssue()" [value]="statusOptions.ClosedIssues">Closed Issues</mat-option>
+        <div class="status-section-label">Pull Requests</div>
+        <mat-option [value]="statusOptions.OpenPullRequests">Open Pull Requests</mat-option>
+        <mat-option [value]="statusOptions.MergedPullRequests">Merged Pull Requests</mat-option>
+        <mat-option [value]="statusOptions.ClosedPullRequests">Closed Pull Request</mat-option>
+
+        <div class="status-section-label">Issues</div>
+        <mat-option [value]="statusOptions.OpenIssues">Open Issues</mat-option>
+        <mat-option [value]="statusOptions.ClosedIssues">Closed Issues</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="standard" class="filter-item">
-      <mat-label>Type</mat-label>
-      <mat-select
-        [value]="this.filter.type"
-        panelClass="filter-bar-panel"
-        (selectionChange)="this.filtersService.updateFilters({ type: $event.value })"
-      >
-        <mat-option [value]="typeOptions.All">All</mat-option>
-        <mat-option [value]="typeOptions.Issue">Issue</mat-option>
-        <mat-option [value]="typeOptions.PullRequests">Pull Request</mat-option>
-      </mat-select>
-    </mat-form-field>
+
     <mat-form-field
       appearance="standard"
       matSort
@@ -87,10 +79,8 @@
         <mat-option *ngFor="let milestone of this.milestoneService.milestones" [value]="milestone.title">
           {{ milestone.title }}
         </mat-option>
-        <mat-option *ngIf="isFilterIssue()" [value]="milestoneOptions.IssueWithoutMilestone">Issues without a milestone</mat-option>
-        <mat-option *ngIf="isFilterPullRequest()" [value]="milestoneOptions.PullRequestWithoutMilestone"
-          >PRs without a milestone</mat-option
-        >
+        <mat-option [value]="milestoneOptions.IssueWithoutMilestone">Issues without a milestone</mat-option>
+        <mat-option [value]="milestoneOptions.PullRequestWithoutMilestone">PRs without a milestone</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field appearance="standard" class="filter-item">

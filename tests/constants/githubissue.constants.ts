@@ -1,4 +1,4 @@
-import { IssueState, IssueStateReason } from '../../graphql/graphql-types';
+import { IssueState, IssueStateReason, PullRequestState } from '../../graphql/graphql-types';
 import { GithubIssue } from '../../src/app/core/models/github/github-issue.model';
 import { GithubLabel } from '../../src/app/core/models/github/github-label.model';
 import { USER_ANUBHAV } from './data.constants';
@@ -219,3 +219,63 @@ export const generateIssueWithRandomData: () => GithubIssue = () => {
     user: USER_ANUBHAV_DETAILS
   });
 };
+
+export const PULLREQUEST_WITH_EMPTY_DESCRIPTION = new GithubIssue({
+  id: '574085971',
+  number: 92,
+  assignees: [],
+  body: '',
+  created_at: '2020-03-02T16:19:02Z',
+  labels: [GITHUB_LABEL_TEAM_LABEL, GITHUB_LABEL_TUTORIAL_LABEL, GITHUB_LABEL_FUNCTIONALITY_BUG, GITHUB_LABEL_MEDIUM_SEVERITY],
+  state: PullRequestState.Open,
+  stateReason: IssueStateReason.Reopened,
+  title: 'App starts to lag when given large amount of input',
+  updated_at: '2020-03-13T13:37:32Z',
+  closed_at: '',
+  url: '',
+  user: USER_ANUBHAV_DETAILS,
+  milestone: MILESTONE_ONE,
+  comments: [],
+  issueOrPr: 'PullRequest',
+  isDraft: false
+});
+
+export const CLOSED_PULLREQUEST_WITH_EMPTY_DESCRIPTION = new GithubIssue({
+  id: '574085971',
+  number: 92,
+  assignees: [],
+  body: '',
+  created_at: '2020-03-02T16:19:02Z',
+  labels: [GITHUB_LABEL_TEAM_LABEL, GITHUB_LABEL_TUTORIAL_LABEL, GITHUB_LABEL_FUNCTIONALITY_BUG, GITHUB_LABEL_MEDIUM_SEVERITY],
+  state: PullRequestState.Closed,
+  stateReason: '',
+  title: 'App starts to lag when given large amount of input',
+  updated_at: '2020-03-13T13:37:32Z',
+  closed_at: '2021-03-13T13:00:00Z',
+  url: '',
+  user: USER_ANUBHAV_DETAILS,
+  milestone: MILESTONE_ONE,
+  comments: [],
+  issueOrPr: 'PullRequest',
+  isDraft: false
+});
+
+export const MERGED_PULLREQUEST_WITH_EMPTY_DESCRIPTION = new GithubIssue({
+  id: '574085971',
+  number: 92,
+  assignees: [],
+  body: '',
+  created_at: '2020-03-02T16:19:02Z',
+  labels: [GITHUB_LABEL_TEAM_LABEL, GITHUB_LABEL_TUTORIAL_LABEL, GITHUB_LABEL_FUNCTIONALITY_BUG, GITHUB_LABEL_MEDIUM_SEVERITY],
+  state: PullRequestState.Merged,
+  stateReason: '',
+  title: 'App starts to lag when given large amount of input',
+  updated_at: '2020-03-13T13:37:32Z',
+  closed_at: '',
+  url: '',
+  user: USER_ANUBHAV_DETAILS,
+  milestone: MILESTONE_ONE,
+  comments: [],
+  issueOrPr: 'PullRequest',
+  isDraft: false
+});

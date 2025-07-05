@@ -34,7 +34,7 @@ describe('search-filter', () => {
     const issuesList: Issue[] = [openIssue, closedIssue, OpenPullReqeust, ClosedPullReqeust, MergedPullRequest];
 
     it('filter open issues success', () => {
-      let openIssueFilter = defaultFilter;
+      const openIssueFilter = defaultFilter;
       openIssueFilter.status = [StatusOptions.OpenIssues];
       expect(applyDropdownFilter(openIssueFilter, issuesList, false, false)).toEqual([openIssue]);
     });

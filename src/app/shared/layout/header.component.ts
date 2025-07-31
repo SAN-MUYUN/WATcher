@@ -302,4 +302,11 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
+
+  removeRepo(repo: string, event: MouseEvent) {
+    event.stopPropagation();
+    event.preventDefault();
+    console.log('removing repo');
+    this.repoUrlCacheService.removeFromSuggestions(repo);
+  }
 }

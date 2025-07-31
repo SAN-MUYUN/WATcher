@@ -53,3 +53,24 @@
     align-items: center;
   }
 }
+
+.repo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  border: none;
+  background-color: #f44336;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+  z-index: 1;
+}

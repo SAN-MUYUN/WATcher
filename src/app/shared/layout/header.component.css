@@ -54,23 +54,26 @@
   }
 }
 
-.repo-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
 .remove-btn {
   position: absolute;
-  top: 2px;
+  top: 50%;
   right: 2px;
+  transform: translateY(-50%);
   border: none;
-  background-color: #f44336;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  font-size: 12px;
-  line-height: 16px;
+  color: lightgray;
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+  line-height: 28px;
   cursor: pointer;
   z-index: 1;
+  display: none;
+}
+
+.remove-btn:hover {
+  color: red;
+}
+
+button.mat-menu-item:hover .remove-btn {
+  display: inline-block;
 }

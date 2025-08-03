@@ -303,10 +303,13 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  /**
+   * Removes the repo from the list of suggestions.
+   * This method will update the local storage as well.
+   */
   removeRepo(repo: string, event: MouseEvent) {
     event.stopPropagation();
     event.preventDefault();
-    console.log('removing repo');
     this.repoUrlCacheService.removeFromSuggestions(repo);
   }
 }

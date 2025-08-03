@@ -54,19 +54,21 @@
   }
 }
 
+.repo-button-text {
+  margin-right: 32px;
+}
+
 .remove-btn {
   position: absolute;
-  top: 50%;
   right: 2px;
-  transform: translateY(-50%);
+  inset-block: 0;
+  margin-block: auto;
   border: none;
   color: lightgray;
   width: 28px;
   height: 28px;
   font-size: 28px;
   line-height: 28px;
-  cursor: pointer;
-  z-index: 1;
   display: none;
 }
 

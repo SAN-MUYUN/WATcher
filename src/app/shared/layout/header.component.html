@@ -45,7 +45,7 @@
         <div class="repo-options">
           <div *ngFor="let repo of this.repoUrlCacheService.suggestions">
             <button mat-menu-item *ngIf="repo !== this.currentRepo" (click)="this.applyRepoDropdown(repo, true)">
-              <span>{{ repo }}</span>
+              <span class="repo-button-text">{{ repo }}</span>
               <mat-icon class="remove-btn" (click)="this.removeRepo(repo, $event)">close</mat-icon>
             </button>
           </div>

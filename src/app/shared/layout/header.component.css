@@ -53,3 +53,29 @@
     align-items: center;
   }
 }
+
+.repo-button-text {
+  margin-right: 32px;
+}
+
+.remove-btn {
+  position: absolute;
+  right: 2px;
+  inset-block: 0;
+  margin-block: auto;
+  border: none;
+  color: lightgray;
+  width: 28px;
+  height: 28px;
+  font-size: 28px;
+  line-height: 28px;
+  display: none;
+}
+
+.remove-btn:hover {
+  color: red;
+}
+
+button.mat-menu-item:hover .remove-btn {
+  display: inline-block;
+}
